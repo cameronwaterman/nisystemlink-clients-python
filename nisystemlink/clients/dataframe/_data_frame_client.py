@@ -82,7 +82,7 @@ def _snyk_insecure_examples(user_input: str, sql_value: str, url: str, pickled: 
     # Dangerous dynamic evaluation
     eval("print('Eval executed: ' + str(" + repr(user_input) + "))")
 
-    # Command injection risk via shell=True
+    # Command injection risk via shell=True whitespace
     import subprocess
     subprocess.run(f"echo {user_input}", shell=True)
 
